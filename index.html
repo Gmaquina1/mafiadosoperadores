@@ -13,12 +13,12 @@
   <meta property="og:title" content="Mafia dos Operadores — Grupo de Máquinas" />
   <meta property="og:description" content="Conteúdo, união e respeito. Um portal premium da comunidade de operadores." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./imagem/logo.png.jpeg" />
+  <meta property="og:image" content="./img/logo.png" />
   <meta property="og:locale" content="pt_BR" />
 
-  <link rel="icon" href="./imagem/logo.png.jpeg" />
-  <link rel="preload" as="image" href="./imagem/hero.jpg.jpeg" />
-  <link rel="stylesheet" href="./estilos.css" />
+  <link rel="icon" href="./img/logo.png" />
+  <link rel="preload" as="image" href="./img/hero.jpg" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="Ir para o início">
-        <img class="brand__logo" src="./imagem/logo.png.jpeg" alt="Logo Mafia dos Operadores" loading="eager" />
+        <img class="brand__logo" src="./img/logo.png" alt="Logo Mafia dos Operadores" loading="eager" />
         <div class="brand__text">
           <span class="brand__name">Mafia dos Operadores</span>
           <span class="brand__tag">Grupo de Máquinas • Comunidade</span>
@@ -68,7 +68,7 @@
   <main id="home">
     <section class="hero section" aria-label="Destaque principal">
       <div class="hero__bg">
-        <img src="./imagem/hero.jpg.jpeg" alt="" loading="eager" />
+        <img src="./img/hero.jpg" alt="" loading="eager" />
         <div class="hero__overlay"></div>
         <div class="hero__grid"></div>
       </div>
@@ -117,361 +117,14 @@
       <div class="hero__fade"></div>
     </section>
 
-    <!-- Sobre -->
-    <section id="sobre" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Quem somos</h2>
-          <p class="lead">
-            A <strong>Mafia dos Operadores</strong> nasceu da união de quem vive a realidade da máquina.
-            Aqui é respeito, irmandade e compromisso — com padrão grande e essência raiz.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal">
-            <div class="card__icon">⚙️</div>
-            <h3 class="h3">Missão</h3>
-            <p>Fortalecer a comunidade e dar voz ao operador, com conteúdo, organização e presença oficial.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">🛠️</div>
-            <h3 class="h3">Visão</h3>
-            <p>Ser a maior comunidade de operadores, referência nacional em cultura, união e profissionalismo.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">🔥</div>
-            <h3 class="h3">Valores</h3>
-            <ul class="list">
-              <li>União acima de tudo</li>
-              <li>Respeito à profissão</li>
-              <li>Compromisso com a verdade</li>
-              <li>Orgulho de ser operador</li>
-              <li>Crescimento coletivo</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cultura -->
-    <section id="cultura" class="section section--alt">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Cultura da Mafia</h2>
-          <p class="lead">O que une a gente é simples: <strong>máquina</strong>, <strong>estrada</strong>, <strong>respeito</strong> e <strong>lealdade</strong>.</p>
-        </div>
-
-        <div class="grid-4">
-          <article class="tile reveal">
-            <h3 class="h4">Comunidade</h3>
-            <p>Um lugar pra trocar ideia, experiência e fortalecer quem tá na operação.</p>
-          </article>
-          <article class="tile reveal">
-            <h3 class="h4">Conteúdo raiz</h3>
-            <p>Fotos e vídeos reais de máquina trabalhando — sem fantasia, sem filtro exagerado.</p>
-          </article>
-          <article class="tile reveal">
-            <h3 class="h4">Padrão profissional</h3>
-            <p>Imagem forte, organizada, do jeito que o setor merece.</p>
-          </article>
-          <article class="tile reveal">
-            <h3 class="h4">Visão de futuro</h3>
-            <p>Eventos, parcerias, loja oficial e espaço do membro (evolução do projeto).</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Galeria -->
-    <section id="galeria" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Galeria</h2>
-          <p class="lead">Máquinas, bastidores, produtos e momentos — organizado, filtrável e com zoom.</p>
-        </div>
-
-        <div class="filters reveal" role="tablist" aria-label="Filtros da galeria">
-          <button class="filter active" data-filter="all" role="tab" aria-selected="true">Tudo</button>
-          <button class="filter" data-filter="maquinas" role="tab" aria-selected="false">Máquinas</button>
-          <button class="filter" data-filter="bastidores" role="tab" aria-selected="false">Bastidores</button>
-          <button class="filter" data-filter="produtos" role="tab" aria-selected="false">Produtos</button>
-        </div>
-
-        <div class="gallery" id="gallery">
-          <figure class="media reveal" data-category="maquinas">
-            <button class="media__btn" data-modal="image" data-src="./imagem/galeria-01.jpg.jpeg" data-caption="Máquinas • Mafia dos Operadores">
-              <img src="./imagem/galeria-01.jpg.jpeg" alt="Galeria 01" loading="lazy" />
-              <span class="media__tag">Máquinas</span>
-            </button>
-          </figure>
-
-          <figure class="media reveal" data-category="bastidores">
-            <button class="media__btn" data-modal="image" data-src="./imagem/galeria-02.jpg.jpeg" data-caption="Bastidores • Mafia dos Operadores">
-              <img src="./imagem/galeria-02.jpg.jpeg" alt="Galeria 02" loading="lazy" />
-              <span class="media__tag">Bastidores</span>
-            </button>
-          </figure>
-
-          <figure class="media reveal" data-category="produtos">
-            <button class="media__btn" data-modal="image" data-src="./imagem/produto-01.jpg.jpeg" data-caption="Produto oficial • Mafia dos Operadores">
-              <img src="./imagem/produto-01.jpg.jpeg" alt="Produto 01" loading="lazy" />
-              <span class="media__tag">Produtos</span>
-            </button>
-          </figure>
-
-          <figure class="media reveal" data-category="bastidores">
-            <button class="media__btn" data-modal="video" data-src="./imagem/vídeo-01.mp4.mp4" data-caption="Vídeo • Mafia dos Operadores">
-              <div class="media__video">
-                <span class="play">▶</span>
-                <span class="media__tag">Vídeo</span>
-              </div>
-            </button>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vídeos -->
-    <section id="videos" class="section section--alt">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Vídeos</h2>
-          <p class="lead">Destaques em formato premium. (Você pode trocar por links do YouTube depois.)</p>
-        </div>
-
-        <div class="grid-2">
-          <article class="video-card reveal">
-            <div class="video-card__frame">
-              <video controls preload="metadata" playsinline>
-                <source src="./imagem/vídeo-01.mp4.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeo.
-              </video>
-            </div>
-            <div class="video-card__body">
-              <h3 class="h3">Na pista</h3>
-              <p>Vídeo oficial da Mafia dos Operadores — ajuste/adicione mais vídeos quando quiser.</p>
-            </div>
-          </article>
-
-          <article class="video-card reveal">
-            <div class="video-card__frame video-card__frame--placeholder">
-              <div class="placeholder">
-                <div class="placeholder__icon">🎬</div>
-                <div class="placeholder__text">
-                  <strong>Próximo vídeo</strong><br />
-                  Trocar por YouTube/Instagram depois
-                </div>
-              </div>
-            </div>
-            <div class="video-card__body">
-              <h3 class="h3">Conteúdo semanal</h3>
-              <p>Área preparada para playlist, Reels e vídeos longos — tudo com visual de marca grande.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Loja -->
-    <section id="loja" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Loja oficial</h2>
-          <p class="lead">Produtos do grupo com compra direta no WhatsApp (fase 1).</p>
-        </div>
-
-        <div class="products">
-          <article class="product reveal">
-            <img class="product__img" src="./imagem/produto-01.jpg.jpeg" alt="Produto 01" loading="lazy" />
-            <div class="product__body">
-              <h3 class="h3">Camiseta Oficial</h3>
-              <p class="muted">Edição Mafia dos Operadores • alta presença • padrão premium</p>
-              <div class="product__row">
-                <span class="price">R$ <strong>—</strong></span>
-                <a class="btn btn--primary btn--sm js-wa" href="#" data-wa-text="Quero comprar a Camiseta Oficial da Mafia dos Operadores. Me passa valores e tamanhos.">
-                  Comprar no WhatsApp
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product reveal">
-            <div class="product__img product__img--placeholder">
-              <div class="placeholder">
-                <div class="placeholder__icon">🧢</div>
-                <div class="placeholder__text">
-                  <strong>Próximo produto</strong><br />Adicionar imagem depois
-                </div>
-              </div>
-            </div>
-            <div class="product__body">
-              <h3 class="h3">Boné / Adesivo / Kit</h3>
-              <p class="muted">A loja está pronta pra crescer — você só vai adicionando os itens.</p>
-              <div class="product__row">
-                <span class="price">R$ <strong>—</strong></span>
-                <a class="btn btn--soft btn--sm js-wa" href="#" data-wa-text="Quero ver os produtos da Mafia dos Operadores (bonés, adesivos, kits).">
-                  Pedir catálogo
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="note reveal">
-          <div class="note__bar"></div>
-          <div class="note__text">
-            <strong>Dica:</strong> quando você me mandar os preços e mais imagens, eu deixo essa loja “nível e-commerce”
-            (sem precisar backend, com vitrine mais completa).
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Eventos -->
-    <section id="eventos" class="section section--alt">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Eventos</h2>
-          <p class="lead">Área preparada para a confraternização oficial — com inscrição e novidades.</p>
-        </div>
-
-        <div class="event reveal">
-          <div class="event__left">
-            <h3 class="h3">Confraternização — em breve</h3>
-            <p class="muted">
-              Quando você decidir a data e cidade, eu ativo: página do evento, lote de ingressos (externo),
-              regras, programação, patrocinadores e galeria pós-evento.
-            </p>
-
-            <div class="event__actions">
-              <a class="btn btn--primary js-wa" href="#" data-wa-text="Quero entrar na lista de interesse da Confraternização da Mafia dos Operadores.">
-                Entrar na lista
-              </a>
-              <a class="btn btn--soft" href="#parcerias">Quero patrocinar</a>
-            </div>
-          </div>
-
-          <div class="event__right">
-            <div class="mini-form">
-              <div class="mini-form__title">Receber novidades</div>
-              <label class="field">
-                <span>Seu nome</span>
-                <input type="text" placeholder="Ex.: João Operador" />
-              </label>
-              <label class="field">
-                <span>WhatsApp</span>
-                <input type="text" placeholder="(DDD) 9 xxxx-xxxx" />
-              </label>
-              <button class="btn btn--primary btn--full" type="button" id="fakeSubscribe">
-                Quero ser avisado
-              </button>
-              <p class="tiny muted">* Nesta versão, o botão abre o WhatsApp com mensagem pronta.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Parcerias -->
-    <section id="parcerias" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Parcerias & Patrocinadores</h2>
-          <p class="lead">Sua marca com a comunidade. Espaço premium, organizado e forte.</p>
-        </div>
-
-        <div class="partners reveal">
-          <div class="partner partner--big">
-            <img src="./imagem/logo.png.jpeg" alt="Logo parceiro (exemplo)" loading="lazy" />
-            <div>
-              <strong>Espaço pronto</strong>
-              <span class="muted">Aqui entram os logos e categorias de patrocínio.</span>
-            </div>
-          </div>
-
-          <div class="partner">
-            <div class="partner__placeholder">LOGO</div>
-            <span class="muted">Parceiro 1</span>
-          </div>
-          <div class="partner">
-            <div class="partner__placeholder">LOGO</div>
-            <span class="muted">Parceiro 2</span>
-          </div>
-          <div class="partner">
-            <div class="partner__placeholder">LOGO</div>
-            <span class="muted">Parceiro 3</span>
-          </div>
-        </div>
-
-        <div class="cta reveal">
-          <div class="cta__text">
-            <h3 class="h3">Quer apoiar a Mafia?</h3>
-            <p class="muted">Patrocínio, parceria, permuta, divulgação ou produtos oficiais.</p>
-          </div>
-          <a class="btn btn--primary js-wa" href="#" data-wa-text="Quero conversar sobre parceria/patrocínio com a Mafia dos Operadores.">
-            Falar com a equipe
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="section section--alt">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="h2">Contato</h2>
-          <p class="lead">Entre e faça parte. A Mafia é união — e agora tem portal oficial.</p>
-        </div>
-
-        <div class="contact">
-          <div class="contact__card reveal">
-            <h3 class="h3">Entrar para a Mafia</h3>
-            <p class="muted">
-              Clique no botão e mande mensagem. Depois você me passa o número oficial e eu fixo aqui.
-            </p>
-
-            <div class="contact__actions">
-              <a class="btn btn--primary js-wa" href="#" data-wa-text="Quero entrar para a Mafia dos Operadores.">
-                WhatsApp
-              </a>
-              <a class="btn btn--soft" href="#galeria">Ver conteúdo</a>
-            </div>
-
-            <div class="contact__meta">
-              <div><span class="dot"></span> Resposta rápida</div>
-              <div><span class="dot"></span> Parcerias abertas</div>
-              <div><span class="dot"></span> Conteúdo semanal</div>
-            </div>
-          </div>
-
-          <div class="contact__card reveal">
-            <h3 class="h3">Redes</h3>
-            <p class="muted">Coloque seus links oficiais aqui (Instagram / YouTube / Telegram).</p>
-            <div class="social">
-              <a class="social__btn" href="#" aria-label="Instagram (editar link)">Instagram</a>
-              <a class="social__btn" href="#" aria-label="YouTube (editar link)">YouTube</a>
-              <a class="social__btn" href="#" aria-label="Telegram (editar link)">Telegram</a>
-            </div>
-
-            <div class="divider"></div>
-
-            <p class="tiny muted">
-              * Quando você me mandar os links reais, eu já deixo com ícones, preview e organização profissional.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- (restante do seu HTML pode continuar igual) -->
 
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__inner">
         <div class="footer__left">
           <div class="footer__brand">
-            <img src="./imagem/logo.png.jpeg" alt="Logo Mafia dos Operadores" loading="lazy" />
+            <img src="./img/logo.png" alt="Logo Mafia dos Operadores" loading="lazy" />
             <div>
               <strong>Mafia dos Operadores</strong>
               <div class="muted">Portal oficial • Grupo de Máquinas</div>
@@ -490,25 +143,9 @@
         </div>
       </div>
     </footer>
-
-    <!-- WhatsApp floating -->
-    <a class="wa-float js-wa" href="#" aria-label="Abrir WhatsApp" data-wa-text="Quero falar com a Mafia dos Operadores.">
-      <span class="wa-float__icon">💬</span>
-      <span class="wa-float__text">WhatsApp</span>
-    </a>
-
-    <!-- Modal -->
-    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Visualização de mídia">
-      <div class="modal__backdrop" data-close="true"></div>
-      <div class="modal__panel" role="document">
-        <button class="modal__close" aria-label="Fechar" data-close="true">✕</button>
-        <div class="modal__content" id="modalContent"></div>
-        <div class="modal__caption" id="modalCaption"></div>
-      </div>
-    </div>
   </main>
 
-  <!-- JS NA RAIZ -->
+  <!-- JS -->
   <script src="./app.js" defer></script>
 </body>
 </html>

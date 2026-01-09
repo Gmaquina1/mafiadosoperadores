@@ -2,21 +2,11 @@
   const $ = (sel, root=document) => root.querySelector(sel);
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-  // ===== CONFIG =====
-  // Troque pelo número oficial no formato: 55 + DDD + número (sem espaços)
-  // Ex.: 5538998465955
-  const WHATSAPP_NUMBER = "5538998465955"; // <-- EDITA AQUI
-
-  const makeWaUrl = (text) => {
-    const msg = encodeURIComponent(text || "Quero falar com a Mafia dos Operadores.");
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
-  };
-
-  // Year
+  // Ano
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Theme toggle (persist)
+  // Tema (persistência)
   const themeToggle = $("#themeToggle");
   const savedTheme = localStorage.getItem("mdo_theme");
   if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
@@ -28,15 +18,15 @@
     localStorage.setItem("mdo_theme", next);
   });
 
-  // Mobile nav toggle
+  // Menu mobile
   const navToggle = $("#navToggle");
   const navList = $("#navList");
+
   navToggle?.addEventListener("click", () => {
     const open = navList.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", String(open));
   });
 
-  // Close nav on link click
   $$(".nav__link").forEach(a => {
     a.addEventListener("click", () => {
       navList?.classList.remove("open");
@@ -44,20 +34,7 @@
     });
   });
 
-  // Close nav if click outside (mobile)
-  document.addEventListener("click", (e) => {
-    if (!navList || !navToggle) return;
-    const isOpen = navList.classList.contains("open");
-    if (!isOpen) return;
-    const target = e.target;
-    const clickedInside = navList.contains(target) || navToggle.contains(target);
-    if (!clickedInside) {
-      navList.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  // Scroll progress
+  // Progresso topo
   const topProgress = $("#topProgress");
   const onScrollProgress = () => {
     const h = document.documentElement;
@@ -69,19 +46,25 @@
   window.addEventListener("scroll", onScrollProgress, { passive:true });
   onScrollProgress();
 
-  // Reveal on scroll
+  // Reveal
   const revealEls = $$(".reveal");
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add("show");
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.16 });
-  revealEls.forEach(el => io.observe(el));
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Active section highlight
+  if (!prefersReduced) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("show");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add("show"));
+  }
+
+  // Destaque do menu por seção
   const links = $$(".nav__link");
   const sections = links
     .map(a => ({ a, id: (a.getAttribute("href") || "").replace("#","") }))
@@ -100,18 +83,17 @@
     if (sec) secObserver.observe(sec);
   });
 
-  // Counters
+  // Contadores
   const counters = $$("[data-count]");
   const animateCount = (el) => {
     const target = Number(el.getAttribute("data-count") || "0");
     const duration = 1200;
     const start = performance.now();
-    const from = 0;
 
     const step = (t) => {
       const p = Math.min(1, (t - start) / duration);
       const eased = 1 - Math.pow(1 - p, 3);
-      const val = Math.round(from + (target - from) * eased);
+      const val = Math.round(target * eased);
       el.textContent = val.toLocaleString("pt-BR");
       if (p < 1) requestAnimationFrame(step);
     };
@@ -129,7 +111,7 @@
 
   counters.forEach(c => counterObserver.observe(c));
 
-  // Gallery filters
+  // Filtro galeria
   const filterBtns = $$(".filter");
   const mediaItems = $$(".media");
 
@@ -151,16 +133,14 @@
     });
   });
 
-  // Modal (image/video) with focus management
+  // Modal (imagem/vídeo)
   const modal = $("#modal");
   const modalContent = $("#modalContent");
   const modalCaption = $("#modalCaption");
-  let lastFocused = null;
 
   const openModal = ({type, src, caption}) => {
-    if (!modal || !modalContent || !src) return;
+    if (!modal || !modalContent) return;
 
-    lastFocused = document.activeElement;
     modalContent.innerHTML = "";
     modalCaption.textContent = caption || "";
 
@@ -183,9 +163,6 @@
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-
-    const closeBtn = $(".modal__close", modal);
-    closeBtn?.focus();
   };
 
   const closeModal = () => {
@@ -194,24 +171,17 @@
     modal.setAttribute("aria-hidden", "true");
     modalContent.innerHTML = "";
     document.body.style.overflow = "";
-
-    if (lastFocused && typeof lastFocused.focus === "function") {
-      lastFocused.focus();
-    }
-    lastFocused = null;
   };
 
-  // Bind modal buttons
   $$("[data-modal]").forEach(btn => {
     btn.addEventListener("click", () => {
       const type = btn.getAttribute("data-modal");
       const src = btn.getAttribute("data-src");
       const caption = btn.getAttribute("data-caption") || "";
-      openModal({type, src, caption});
+      if (src) openModal({type, src, caption});
     });
   });
 
-  // Close modal (backdrop / close btn / ESC)
   modal?.addEventListener("click", (e) => {
     const t = e.target;
     if (t && t.getAttribute && t.getAttribute("data-close") === "true") closeModal();
@@ -220,9 +190,16 @@
     if (e.key === "Escape") closeModal();
   });
 
-  // WhatsApp buttons
-  const waLinks = $$(".js-wa");
-  waLinks.forEach(a => {
+  // WhatsApp (NÚMERO REAL)
+  // Seu WhatsApp: +55 38 99846-5955 => 5538998465955
+  const WHATSAPP_NUMBER = "5538998465955";
+
+  const makeWaUrl = (text) => {
+    const msg = encodeURIComponent(text || "Quero falar com a Mafia dos Operadores.");
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+  };
+
+  $$(".js-wa").forEach(a => {
     a.addEventListener("click", (e) => {
       e.preventDefault();
       const txt = a.getAttribute("data-wa-text") || "";
@@ -230,13 +207,10 @@
     });
   });
 
-  // Mini form submit -> WhatsApp
-  const miniForm = $("#miniForm");
-  miniForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const fd = new FormData(miniForm);
-    const name = String(fd.get("name") || "").trim();
-    const phone = String(fd.get("phone") || "").trim();
+  // Botão “quero ser avisado”
+  $("#fakeSubscribe")?.addEventListener("click", () => {
+    const name = ($("#subName")?.value || "").trim();
+    const phone = ($("#subPhone")?.value || "").trim();
     const msg =
       `Quero receber novidades da Confraternização da Mafia dos Operadores.\n` +
       (name ? `Nome: ${name}\n` : "") +

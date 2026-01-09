@@ -9,40 +9,19 @@
   <!-- SEO -->
   <meta name="description" content="Mafia dos Operadores — comunidade de máquinas, união, respeito e conteúdo raiz com padrão profissional. Fotos, vídeos, loja e eventos." />
 
-  <!-- Open Graph (preview WhatsApp / redes) -->
+  <!-- Open Graph (preview no WhatsApp) -->
   <meta property="og:title" content="Mafia dos Operadores — Grupo de Máquinas" />
   <meta property="og:description" content="Conteúdo, união e respeito. Um portal premium da comunidade de operadores." />
   <meta property="og:type" content="website" />
-
-  <!-- Use URL ABSOLUTA no og:image para evitar falhas de preview -->
-  <meta property="og:image" content="https://gmaquina1.github.io/mafiadosoperadores/ativos/imagem/logo.png.jpeg" />
+  <meta property="og:image" content="./imagem/logo.png.jpeg" />
   <meta property="og:locale" content="pt_BR" />
 
-  <link rel="icon" href="ativos/imagem/logo.png.jpeg" />
-
-  <!-- Preload do hero ajuda performance (ok) -->
-  <link rel="preload" as="image" href="ativos/imagem/hero.jpg.jpeg" />
-
-  <!-- CSS SEMPRE na raiz -->
-  <link rel="stylesheet" href="estilos.css" />
-
-  <!-- Fallback rápido se o CSS não carregar -->
-  <style>
-    .css-check{position:fixed;left:10px;bottom:10px;background:#111827;color:#fff;padding:8px 10px;border-radius:10px;font:12px Arial;opacity:.8;z-index:9999}
-    .css-check.ok{display:none}
-  </style>
+  <link rel="icon" href="./imagem/logo.png.jpeg" />
+  <link rel="preload" as="image" href="./imagem/hero.jpg.jpeg" />
+  <link rel="stylesheet" href="./estilos.css" />
 </head>
 
 <body>
-  <noscript>
-    <div style="padding:12px;background:#111827;color:#fff;font-family:Arial">
-      Este site precisa do JavaScript ativado para funcionar completo (menu, animações e galeria).
-    </div>
-  </noscript>
-
-  <!-- Se o CSS carregar, a classe "ok" é aplicada via JS no final -->
-  <div class="css-check" id="cssCheck">Carregando estilos…</div>
-
   <!-- Top progress -->
   <div class="top-progress" id="topProgress" aria-hidden="true"></div>
 
@@ -50,7 +29,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="Ir para o início">
-        <img class="brand__logo" src="ativos/imagem/logo.png.jpeg" alt="Logo Mafia dos Operadores" loading="eager" />
+        <img class="brand__logo" src="./imagem/logo.png.jpeg" alt="Logo Mafia dos Operadores" loading="eager" />
         <div class="brand__text">
           <span class="brand__name">Mafia dos Operadores</span>
           <span class="brand__tag">Grupo de Máquinas • Comunidade</span>
@@ -85,11 +64,11 @@
     </div>
   </header>
 
-  <!-- HERO / MAIN -->
+  <!-- Hero -->
   <main id="home">
     <section class="hero section" aria-label="Destaque principal">
       <div class="hero__bg">
-        <img src="ativos/imagem/hero.jpg.jpeg" alt="" loading="eager" />
+        <img src="./imagem/hero.jpg.jpeg" alt="" loading="eager" />
         <div class="hero__overlay"></div>
         <div class="hero__grid"></div>
       </div>
@@ -223,28 +202,28 @@
 
         <div class="gallery" id="gallery">
           <figure class="media reveal" data-category="maquinas">
-            <button class="media__btn" data-modal="image" data-src="ativos/imagem/gallery-01.jpg.jpeg" data-caption="Máquinas • Mafia dos Operadores">
-              <img src="ativos/imagem/gallery-01.jpg.jpeg" alt="Galeria 01" loading="lazy" />
+            <button class="media__btn" data-modal="image" data-src="./imagem/galeria-01.jpg.jpeg" data-caption="Máquinas • Mafia dos Operadores">
+              <img src="./imagem/galeria-01.jpg.jpeg" alt="Galeria 01" loading="lazy" />
               <span class="media__tag">Máquinas</span>
             </button>
           </figure>
 
           <figure class="media reveal" data-category="bastidores">
-            <button class="media__btn" data-modal="image" data-src="ativos/imagem/gallery-02.jpg.jpeg" data-caption="Bastidores • Mafia dos Operadores">
-              <img src="ativos/imagem/gallery-02.jpg.jpeg" alt="Galeria 02" loading="lazy" />
+            <button class="media__btn" data-modal="image" data-src="./imagem/galeria-02.jpg.jpeg" data-caption="Bastidores • Mafia dos Operadores">
+              <img src="./imagem/galeria-02.jpg.jpeg" alt="Galeria 02" loading="lazy" />
               <span class="media__tag">Bastidores</span>
             </button>
           </figure>
 
           <figure class="media reveal" data-category="produtos">
-            <button class="media__btn" data-modal="image" data-src="ativos/imagem/product-01.jpg.jpeg" data-caption="Produto oficial • Mafia dos Operadores">
-              <img src="ativos/imagem/product-01.jpg.jpeg" alt="Produto 01" loading="lazy" />
+            <button class="media__btn" data-modal="image" data-src="./imagem/produto-01.jpg.jpeg" data-caption="Produto oficial • Mafia dos Operadores">
+              <img src="./imagem/produto-01.jpg.jpeg" alt="Produto 01" loading="lazy" />
               <span class="media__tag">Produtos</span>
             </button>
           </figure>
 
           <figure class="media reveal" data-category="bastidores">
-            <button class="media__btn" data-modal="video" data-src="ativos/imagem/video-01.mp4.mp4" data-caption="Vídeo • Mafia dos Operadores">
+            <button class="media__btn" data-modal="video" data-src="./imagem/vídeo-01.mp4.mp4" data-caption="Vídeo • Mafia dos Operadores">
               <div class="media__video">
                 <span class="play">▶</span>
                 <span class="media__tag">Vídeo</span>
@@ -267,7 +246,7 @@
           <article class="video-card reveal">
             <div class="video-card__frame">
               <video controls preload="metadata" playsinline>
-                <source src="ativos/imagem/video-01.mp4.mp4" type="video/mp4" />
+                <source src="./imagem/vídeo-01.mp4.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeo.
               </video>
             </div>
@@ -306,7 +285,7 @@
 
         <div class="products">
           <article class="product reveal">
-            <img class="product__img" src="ativos/imagem/product-01.jpg.jpeg" alt="Produto 01" loading="lazy" />
+            <img class="product__img" src="./imagem/produto-01.jpg.jpeg" alt="Produto 01" loading="lazy" />
             <div class="product__body">
               <h3 class="h3">Camiseta Oficial</h3>
               <p class="muted">Edição Mafia dos Operadores • alta presença • padrão premium</p>
@@ -406,7 +385,7 @@
 
         <div class="partners reveal">
           <div class="partner partner--big">
-            <img src="ativos/imagem/logo.png.jpeg" alt="Logo parceiro (exemplo)" loading="lazy" />
+            <img src="./imagem/logo.png.jpeg" alt="Logo parceiro (exemplo)" loading="lazy" />
             <div>
               <strong>Espaço pronto</strong>
               <span class="muted">Aqui entram os logos e categorias de patrocínio.</span>
@@ -492,7 +471,7 @@
       <div class="container footer__inner">
         <div class="footer__left">
           <div class="footer__brand">
-            <img src="ativos/imagem/logo.png.jpeg" alt="Logo Mafia dos Operadores" loading="lazy" />
+            <img src="./imagem/logo.png.jpeg" alt="Logo Mafia dos Operadores" loading="lazy" />
             <div>
               <strong>Mafia dos Operadores</strong>
               <div class="muted">Portal oficial • Grupo de Máquinas</div>
@@ -529,18 +508,7 @@
     </div>
   </main>
 
-  <!-- JS SEMPRE na raiz -->
-  <script src="app.js" defer></script>
-
-  <!-- Marcar que o CSS carregou (só pra debug rápido) -->
-  <script>
-    window.addEventListener("load", () => {
-      const el = document.getElementById("cssCheck");
-      if (!el) return;
-      // Se o CSS carregou, normalmente o body não fica "cru".
-      // Aqui só removemos o aviso pra não aparecer.
-      el.classList.add("ok");
-    });
-  </script>
+  <!-- JS NA RAIZ -->
+  <script src="./app.js" defer></script>
 </body>
 </html>

@@ -9,19 +9,40 @@
   <!-- SEO -->
   <meta name="description" content="Mafia dos Operadores — comunidade de máquinas, união, respeito e conteúdo raiz com padrão profissional. Fotos, vídeos, loja e eventos." />
 
-  <!-- Open Graph (preview no WhatsApp) -->
+  <!-- Open Graph (preview WhatsApp / redes) -->
   <meta property="og:title" content="Mafia dos Operadores — Grupo de Máquinas" />
   <meta property="og:description" content="Conteúdo, união e respeito. Um portal premium da comunidade de operadores." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="ativos/imagem/logo.png.jpeg" />
+
+  <!-- Use URL ABSOLUTA no og:image para evitar falhas de preview -->
+  <meta property="og:image" content="https://gmaquina1.github.io/mafiadosoperadores/ativos/imagem/logo.png.jpeg" />
   <meta property="og:locale" content="pt_BR" />
 
   <link rel="icon" href="ativos/imagem/logo.png.jpeg" />
+
+  <!-- Preload do hero ajuda performance (ok) -->
   <link rel="preload" as="image" href="ativos/imagem/hero.jpg.jpeg" />
-  <link rel="stylesheet" href="estilos.css">
+
+  <!-- CSS SEMPRE na raiz -->
+  <link rel="stylesheet" href="estilos.css" />
+
+  <!-- Fallback rápido se o CSS não carregar -->
+  <style>
+    .css-check{position:fixed;left:10px;bottom:10px;background:#111827;color:#fff;padding:8px 10px;border-radius:10px;font:12px Arial;opacity:.8;z-index:9999}
+    .css-check.ok{display:none}
+  </style>
 </head>
 
 <body>
+  <noscript>
+    <div style="padding:12px;background:#111827;color:#fff;font-family:Arial">
+      Este site precisa do JavaScript ativado para funcionar completo (menu, animações e galeria).
+    </div>
+  </noscript>
+
+  <!-- Se o CSS carregar, a classe "ok" é aplicada via JS no final -->
+  <div class="css-check" id="cssCheck">Carregando estilos…</div>
+
   <!-- Top progress -->
   <div class="top-progress" id="topProgress" aria-hidden="true"></div>
 
@@ -64,7 +85,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO / MAIN -->
   <main id="home">
     <section class="hero section" aria-label="Destaque principal">
       <div class="hero__bg">
@@ -508,6 +529,18 @@
     </div>
   </main>
 
+  <!-- JS SEMPRE na raiz -->
   <script src="app.js" defer></script>
+
+  <!-- Marcar que o CSS carregou (só pra debug rápido) -->
+  <script>
+    window.addEventListener("load", () => {
+      const el = document.getElementById("cssCheck");
+      if (!el) return;
+      // Se o CSS carregou, normalmente o body não fica "cru".
+      // Aqui só removemos o aviso pra não aparecer.
+      el.classList.add("ok");
+    });
+  </script>
 </body>
 </html>

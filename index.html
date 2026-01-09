@@ -1,151 +1,124 @@
 <!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0b0f16" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0f16">
+
   <title>Mafia dos Operadores — Grupo de Máquinas</title>
 
   <!-- SEO -->
-  <meta name="description" content="Mafia dos Operadores — comunidade de máquinas, união, respeito e conteúdo raiz com padrão profissional. Fotos, vídeos, loja e eventos." />
+  <meta name="description" content="Mafia dos Operadores — comunidade de máquinas, união, respeito e conteúdo raiz com padrão profissional.">
 
-  <!-- Open Graph (preview no WhatsApp) -->
-  <meta property="og:title" content="Mafia dos Operadores — Grupo de Máquinas" />
-  <meta property="og:description" content="Conteúdo, união e respeito. Um portal premium da comunidade de operadores." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="./img/logo.png" />
-  <meta property="og:locale" content="pt_BR" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mafia dos Operadores — Grupo de Máquinas">
+  <meta property="og:description" content="Comunidade oficial de operadores. Conteúdo raiz com padrão profissional.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./img/logo.png">
+  <meta property="og:locale" content="pt_BR">
 
-  <link rel="icon" href="./img/logo.png" />
-  <link rel="preload" as="image" href="./img/hero.jpg" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./img/logo.png">
+  <link rel="preload" as="image" href="./img/hero.jpg">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <!-- Top progress -->
-  <div class="top-progress" id="topProgress" aria-hidden="true"></div>
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a class="brand" href="#home" aria-label="Ir para o início">
-        <img class="brand__logo" src="./img/logo.png" alt="Logo Mafia dos Operadores" loading="eager" />
-        <div class="brand__text">
-          <span class="brand__name">Mafia dos Operadores</span>
-          <span class="brand__tag">Grupo de Máquinas • Comunidade</span>
-        </div>
-      </a>
-
-      <nav class="nav" aria-label="Menu principal">
-        <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-
-        <ul class="nav__list" id="navList">
-          <li><a class="nav__link active" href="#home">Início</a></li>
-          <li><a class="nav__link" href="#sobre">Sobre</a></li>
-          <li><a class="nav__link" href="#cultura">Cultura</a></li>
-          <li><a class="nav__link" href="#galeria">Galeria</a></li>
-          <li><a class="nav__link" href="#videos">Vídeos</a></li>
-          <li><a class="nav__link" href="#loja">Loja</a></li>
-          <li><a class="nav__link" href="#eventos">Eventos</a></li>
-          <li><a class="nav__link" href="#parcerias">Parcerias</a></li>
-          <li><a class="nav__link" href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-
-      <div class="header__actions">
-        <button class="chip" id="themeToggle" aria-label="Alternar tema">
-          <span class="chip__dot"></span>
-          <span class="chip__text">Modo</span>
-        </button>
-        <a class="btn btn--primary" href="#contato">Entrar pra Mafia</a>
+<header class="header">
+  <div class="container header__inner">
+    <div class="brand">
+      <img src="./img/logo.png" alt="Mafia dos Operadores">
+      <div>
+        <strong>Mafia dos Operadores</strong>
+        <span>Grupo de Máquinas</span>
       </div>
     </div>
-  </header>
 
-  <!-- Hero -->
-  <main id="home">
-    <section class="hero section" aria-label="Destaque principal">
-      <div class="hero__bg">
-        <img src="./img/hero.jpg" alt="" loading="eager" />
-        <div class="hero__overlay"></div>
-        <div class="hero__grid"></div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#loja">Loja</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <img class="hero-bg" src="./img/hero.jpg" alt="">
+  <div class="hero-content">
+    <h1>Não é só máquina.<br><span>É identidade.</span></h1>
+    <p>Estrada, vivência, respeito e união.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#contato">Entrar pra Mafia</a>
+      <a class="btn" href="#galeria">Ver Galeria</a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="section">
+  <div class="container">
+    <h2>Quem somos</h2>
+    <p>
+      A <strong>Mafia dos Operadores</strong> nasceu da união de quem vive a realidade da máquina.
+      Aqui é respeito, irmandade e compromisso.
+    </p>
+  </div>
+</section>
+
+<section id="galeria" class="section dark">
+  <div class="container">
+    <h2>Galeria</h2>
+
+    <div class="gallery">
+      <img src="./img/gallery-01.jpg" alt="">
+      <img src="./img/gallery-02.jpg" alt="">
+      <img src="./img/product-01.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<section id="videos" class="section">
+  <div class="container">
+    <h2>Vídeos</h2>
+    <video controls src="./img/video-01.mp4"></video>
+  </div>
+</section>
+
+<section id="loja" class="section dark">
+  <div class="container">
+    <h2>Loja Oficial</h2>
+
+    <div class="product">
+      <img src="./img/product-01.jpg" alt="">
+      <div>
+        <h3>Camiseta Oficial</h3>
+        <p>Edição Mafia dos Operadores</p>
+        <a class="btn primary wa" data-msg="Quero comprar a camiseta da Mafia dos Operadores">Comprar no WhatsApp</a>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="container hero__content">
-        <div class="hero__badge reveal">
-          <span class="pill">Industrial • Premium • Tecnológico</span>
-          <span class="pill pill--ghost">Comunidade de Máquinas</span>
-        </div>
+<section id="contato" class="section">
+  <div class="container">
+    <h2>Contato</h2>
+    <p>Entre e faça parte da Mafia.</p>
+    <a class="btn primary wa" data-msg="Quero entrar para a Mafia dos Operadores">Falar no WhatsApp</a>
+  </div>
+</section>
 
-        <h1 class="hero__title reveal">
-          Não é só máquina. É <span class="accent">identidade</span>.<br />
-          É estrada, é vivência, é <span class="accent">respeito</span>.
-        </h1>
+</main>
 
-        <p class="hero__subtitle reveal">
-          Um portal oficial da <strong>Mafia dos Operadores</strong> — fotos, vídeos, cultura, loja e eventos.
-          Tudo com cara profissional e raiz de verdade.
-        </p>
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Mafia dos Operadores</p>
+  </div>
+</footer>
 
-        <div class="hero__cta reveal">
-          <a class="btn btn--primary" href="#contato">Falar no WhatsApp</a>
-          <a class="btn btn--soft" href="#galeria">Ver Galeria</a>
-        </div>
-
-        <div class="hero__stats reveal" role="list" aria-label="Números em destaque">
-          <div class="stat" role="listitem">
-            <div class="stat__num" data-count="12000">0</div>
-            <div class="stat__label">Operadores (meta)</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__num" data-count="27">0</div>
-            <div class="stat__label">Estados</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__num" data-count="3500">0</div>
-            <div class="stat__label">Máquinas na pista</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__num" data-count="10">0</div>
-            <div class="stat__label">Anos de estrada</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__fade"></div>
-    </section>
-
-    <!-- (restante do seu HTML pode continuar igual) -->
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer__inner">
-        <div class="footer__left">
-          <div class="footer__brand">
-            <img src="./img/logo.png" alt="Logo Mafia dos Operadores" loading="lazy" />
-            <div>
-              <strong>Mafia dos Operadores</strong>
-              <div class="muted">Portal oficial • Grupo de Máquinas</div>
-            </div>
-          </div>
-          <div class="tiny muted">
-            © <span id="year"></span> Mafia dos Operadores. Todos os direitos reservados.
-          </div>
-        </div>
-
-        <div class="footer__right">
-          <a class="footer__link" href="#sobre">Sobre</a>
-          <a class="footer__link" href="#galeria">Galeria</a>
-          <a class="footer__link" href="#loja">Loja</a>
-          <a class="footer__link" href="#contato">Contato</a>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- JS -->
-  <script src="./app.js" defer></script>
+<script src="./app.js"></script>
 </body>
 </html>
